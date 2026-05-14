@@ -4299,6 +4299,71 @@
 .page { display: none; }
 .page.is-active { display: block; }
 .nav-links a { cursor: pointer; }
+
+  /* === CASE WITH EMBED PAIR · agrupa dos piezas de un mismo caso === */
+  .case-with-embed-pair{
+    display:grid;grid-template-columns:1.05fr 1.5fr;gap:48px;align-items:start;
+    padding:42px 0;border-top:1px solid var(--border-soft);
+  }
+  .case-with-embed-pair:first-of-type{border-top:none;}
+  .case-with-embed-pair .case-info{padding-top:18px;}
+  .case-embed-pair-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  }
+  .case-embed-pair-grid .case-embed iframe{display:block;}
+  @media (max-width:900px){
+    .case-with-embed-pair{grid-template-columns:1fr;gap:24px;}
+    .case-embed-pair-grid{grid-template-columns:1fr;}
+  }
+
+
+  /* === FEE DETAIL TOGGLE BUTTON === */
+  .fee-detail-btn{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--red);font-weight:600;padding:14px 26px;border:1px solid rgba(193,42,33,.3);
+    border-radius:99px;background:rgba(193,42,33,.06);cursor:pointer;
+    transition:all .2s ease;
+  }
+  .fee-detail-btn:hover{background:var(--red);color:#fff;border-color:var(--red);}
+  .fee-table-summary tbody td{vertical-align:middle;}
+  .fee-table-summary tbody td:nth-child(2){color:var(--red);font-family:var(--font-mono);letter-spacing:.04em;font-weight:600;}
+
+
+  /* === ECOSISTEMA DIGITAL AKT === */
+  .ecosistema-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  }
+  .eco-card{
+    background:linear-gradient(135deg,#1E5F86 0%, #1F4F73 100%);
+    color:#fff;border-radius:16px;padding:24px;
+    display:flex;flex-direction:column;gap:14px;
+    box-shadow:0 10px 30px -18px rgba(31,79,115,.4);
+    position:relative;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .eco-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(31,79,115,.55);}
+  .eco-card-special{
+    background:linear-gradient(135deg,#2C7395 0%, #1F4F73 100%);
+    justify-content:center;text-align:center;min-height:160px;
+  }
+  .eco-head h4{
+    font-family:var(--font-display);font-weight:600;font-size:18px;line-height:1.2;
+    color:#fff;letter-spacing:-.005em;margin-bottom:10px;
+  }
+  .eco-head p{font-size:13px;line-height:1.45;color:rgba(255,255,255,.82);font-style:italic;}
+  .eco-brands{
+    margin-top:auto;display:flex;flex-wrap:wrap;gap:8px;padding-top:14px;
+    border-top:1px solid rgba(255,255,255,.18);
+  }
+  .eco-brands span{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+    color:#fff;font-weight:600;
+    padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.12);
+  }
+  @media (max-width:900px){
+    .ecosistema-grid{grid-template-columns:1fr;}
+  }
+
 </style>
 </head>
 <body>
@@ -4447,12 +4512,210 @@
         </div>
       </div>
 
-      <div class="funnel-summary">
-        <div class="funnel-sum"><div class="lab">Comunidad total</div><div class="v">863.80K</div><div class="d">Seguidores activos al cierre de abril (IG + TT + FB).</div></div>
-        <div class="funnel-sum"><div class="lab">Piezas trimestre</div><div class="v">197<sub style="font-size:18px;color:var(--red)">+</sub></div><div class="d">Producidas y publicadas entre febrero y abril 2026.</div></div>
-        <div class="funnel-sum"><div class="lab">Rodajes</div><div class="v">13<sub style="font-size:18px;color:var(--red)">+</sub></div><div class="d">Heros, cápsulas, cubrimientos y producciones especiales.</div></div>
-        <div class="funnel-sum"><div class="lab">Creadores activados</div><div class="v">45<sub style="font-size:18px;color:var(--red)">+</sub></div><div class="d">Red nacional con 9–12 activaciones mensuales.</div></div>
+      <!-- NECESIDAD DE AGENCIA DIGITAL · literal del documento de objetivos área (slide 2) -->
+      <div class="necesidad-block" style="margin-top:48px;padding-top:36px;border-top:1px solid var(--border-soft);">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--red);text-transform:uppercase;margin-bottom:18px;">Necesidad de agencia digital</div>
+        <h3 style="font-family:var(--font-display);font-weight:500;font-size:28px;line-height:1.15;letter-spacing:-.01em;color:var(--navy);margin-bottom:24px;max-width:760px;">Lo que se busca en un acompañamiento externo para sostener este ecosistema.</h3>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+          <div class="necesidad-card"><div class="necesidad-num">01</div><h4>Diferenciación en la estrategia</h4><p>Frente al resto del sector moto en Colombia.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">02</div><h4>Acompañamiento estratégico</h4><p>Con distintas visiones aplicadas al plan, no solo ejecución de piezas.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">03</div><h4>Referentes actualizados</h4><p>De diferentes industrias, no solo de la categoría.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">04</div><h4>IA aplicada a contenidos</h4><p>Uso especializado de IA dentro de la producción digital.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">05</div><h4>Capacidad de reacción</h4><p>Con equipo tercerizado al ritmo del sector y de las redes.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">06</div><h4>Producción y rodajes</h4><p>Recursos técnicos y humanos especializados para producciones de marca.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">07</div><h4>Cobertura por canal</h4><p>Mayor cobertura de la estrategia y tratamiento diferenciado de las plataformas.</p></div>
+          <div class="necesidad-card"><div class="necesidad-num">08</div><h4>Sincronía con PR</h4><p>Integración con la estrategia de relaciones públicas de la marca.</p></div>
+        </div>
       </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================== EQUIPO AKT (literal del primer slide) ====================== -->
+<section class="equipo-akt" id="equipo">
+  <div class="container">
+
+    <!-- ECOSISTEMA DIGITAL AKT · proyectos y áreas -->
+    <div class="ecosistema-block" style="margin-bottom:64px;">
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--red);text-transform:uppercase;margin-bottom:18px;">Proyectos del ecosistema digital AKT y Corbeta</div>
+      <h3 style="font-family:var(--font-display);font-weight:500;font-size:32px;line-height:1.12;letter-spacing:-.01em;color:var(--navy);margin-bottom:36px;max-width:780px;">Las áreas que <em style="color:var(--red);font-style:normal;">opera el equipo digital</em>.</h3>
+
+      <div class="ecosistema-grid">
+        <div class="eco-card">
+          <div class="eco-head">
+            <h4>Redes sociales</h4>
+            <p>Estrategia, gestión de contenido, publicación y respuesta a PQRS.</p>
+          </div>
+          <div class="eco-brands"><span>AKT</span><span>AKT-VOGE</span><span>NIU</span></div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-head">
+            <h4>Sitios web</h4>
+            <p>Estrategia, actualización de contenidos y posicionamiento.</p>
+          </div>
+          <div class="eco-brands"><span>AKT</span><span>NIU</span></div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-head">
+            <h4>Pauta digital</h4>
+            <p>Estrategia, creación de contenidos, ejecución y contenidos.</p>
+          </div>
+          <div class="eco-brands"><span>AKT</span><span>AKT-VOGE</span><span>NIU</span></div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-head">
+            <h4>Influenciadores</h4>
+            <p>Estrategia, búsqueda, gestión y seguimiento.</p>
+          </div>
+          <div class="eco-brands"><span>AKT</span><span>AKT-VOGE</span><span>NIU</span></div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-head">
+            <h4>Mails, SMS y WhatsApp</h4>
+            <p>Estrategia, creación de contenido, envíos y seguimientos.</p>
+          </div>
+          <div class="eco-brands"><span>AKT</span><span>AKT-VOGE</span></div>
+        </div>
+
+        <div class="eco-card">
+          <div class="eco-head">
+            <h4>Fotos de producto (estudio)</h4>
+            <p>Seguimiento, ejecución y administración.</p>
+          </div>
+          <div class="eco-brands"><span>AKT</span><span>AKT-VOGE</span></div>
+        </div>
+
+        <div class="eco-card eco-card-special">
+          <div class="eco-head">
+            <h4>Proyectos del ecosistema digital AKT y Corbeta</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloque original: 3 roles internos -->
+    <div class="section-tag">Funciones equipo digital</div>
+    <h2 class="section-title">El equipo que <em>opera hoy</em> el mercadeo digital de motos en AKT.</h2>
+    <p class="section-lead">Tres roles internos sostienen la operación digital de AKT, AKT-VOGE y NIU. La estructura cubre diseño, contenidos y soporte.</p>
+
+    <div class="akt-team-grid">
+      <div class="akt-role">
+        <div class="akt-role-head">
+          <div class="akt-role-tag">Rol</div>
+          <h3>Analista Mercadeo Digital · Diseño</h3>
+        </div>
+        <ul class="akt-role-list">
+          <li>Desarrollo de piezas gráficas para pauta (AKT y AKT-VOGE)</li>
+          <li>Actualización de sitio web</li>
+          <li>Gestión de fotografía en estudio</li>
+          <li>Acompañamiento en cubrimiento de eventos</li>
+          <li>Gestión de proveedores</li>
+          <li>Seguimiento de facturación proveedores</li>
+          <li>Diseño y envío de mails, SMS y mensajes de WhatsApp</li>
+          <li>Desarrollo gráfico para parrilla AKT-VOGE</li>
+          <li>Desarrollo de piezas gráficas para pauta NIU</li>
+          <li>Apoyo gráfico a necesidades del área</li>
+        </ul>
+      </div>
+
+      <div class="akt-role">
+        <div class="akt-role-head">
+          <div class="akt-role-tag">Rol</div>
+          <h3>Analista Mercadeo Digital · Contenidos</h3>
+        </div>
+        <ul class="akt-role-list">
+          <li>Planeación y seguimiento a parrilla de contenidos AKT</li>
+          <li>Seguimiento a compromisos con agencias</li>
+          <li>Gestión logística de recursos para grabación de contenidos AKT, AKT-VOGE y NIU</li>
+          <li>Seguimiento a cubrimientos digitales</li>
+          <li>Planeación y desarrollo de contenidos digitales para AKT-VOGE y NIU</li>
+          <li>Publicación de contenidos AKT y AKT-VOGE</li>
+          <li>Acompañamiento gestión de respuesta PQRS AKT, AKT-VOGE y NIU</li>
+          <li>Gestión préstamo de motos del área</li>
+          <li>Realización y seguimiento a métricas digitales</li>
+        </ul>
+      </div>
+
+      <div class="akt-role">
+        <div class="akt-role-head">
+          <div class="akt-role-tag">Rol</div>
+          <h3>Practicante Mercadeo Digital</h3>
+        </div>
+        <ul class="akt-role-list">
+          <li>Desarrollo gráfico y audiovisual para la parrilla de NIU</li>
+          <li>Realización de informes mensuales (SIC y ANDI)</li>
+          <li>Respuesta a PQRS de NIU</li>
+          <li>Publicación de contenidos NIU</li>
+          <li>Grabación audiovisual de áreas comerciales</li>
+          <li>Actualización contenido web NIU</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Distribución del equipo agencia · 21 personas -->
+    <div class="equipo-agencia-block" style="margin-top:60px;">
+      <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;color:var(--red);text-transform:uppercase;margin-bottom:18px;">Equipo dedicado de la agencia</div>
+      <h3 style="font-family:var(--font-display);font-weight:500;font-size:28px;line-height:1.15;letter-spacing:-.01em;color:var(--navy);margin-bottom:18px;max-width:760px;">21 profesionales <em style="color:var(--red);font-style:normal;">al servicio de AKT</em>.</h3>
+      <p style="font-size:16px;color:var(--text-2);line-height:1.6;max-width:780px;margin-bottom:32px;">Equipo dedicado en cinco ramas operativas: Ejecutiva, Creativa, Arte, Audiovisual y PR. Más un núcleo estratégico de cinco líderes que coordinan toda la operación.</p>
+
+      <div class="equipo-stats">
+        <div class="equipo-stat highlight"><div class="v">21</div><div class="l">Profesionales</div></div>
+        <div class="equipo-stat"><div class="v">5</div><div class="l">Líderes estratégicos</div></div>
+        <div class="equipo-stat"><div class="v">5</div><div class="l">Ramas operativas</div></div>
+        <div class="equipo-stat"><div class="v">9</div><div class="l">Herramientas y stack IA</div></div>
+      </div>
+
+      <div class="equipo-nucleo">
+        <div class="equipo-nucleo-label">Coordinación general · 3 personas</div>
+        <div class="equipo-nucleo-grid">
+          <div class="equipo-pers lead"><div class="equipo-avatar">HS</div><div class="equipo-info"><div class="equipo-rol">Head of Strategy</div><div class="equipo-area">Estrategia general</div></div></div>
+          <div class="equipo-pers lead"><div class="equipo-avatar">OM</div><div class="equipo-info"><div class="equipo-rol">Operation Manager</div><div class="equipo-area">Operación</div></div></div>
+          <div class="equipo-pers lead"><div class="equipo-avatar">PM</div><div class="equipo-info"><div class="equipo-rol">Project Manager</div><div class="equipo-area">Coordinación</div></div></div>
+        </div>
+      </div>
+
+      <div class="equipo-nucleo">
+        <div class="equipo-nucleo-label">Núcleo estratégico · 5 líderes de rama</div>
+        <div class="equipo-nucleo-grid grid-5">
+          <div class="equipo-pers director"><div class="equipo-avatar">AD</div><div class="equipo-info"><div class="equipo-rol">Account Director</div><div class="equipo-area">Ejecutiva</div></div></div>
+          <div class="equipo-pers director"><div class="equipo-avatar">CD</div><div class="equipo-info"><div class="equipo-rol">Creative Director</div><div class="equipo-area">Creativa</div></div></div>
+          <div class="equipo-pers director"><div class="equipo-avatar">AT</div><div class="equipo-info"><div class="equipo-rol">Art Director</div><div class="equipo-area">Arte</div></div></div>
+          <div class="equipo-pers director"><div class="equipo-avatar">AV</div><div class="equipo-info"><div class="equipo-rol">A/V Director</div><div class="equipo-area">Audiovisual</div></div></div>
+          <div class="equipo-pers director"><div class="equipo-avatar">PR</div><div class="equipo-info"><div class="equipo-rol">PR Manager</div><div class="equipo-area">PR</div></div></div>
+        </div>
+      </div>
+
+      <div class="equipo-ramas-label">Especialistas por rama · 13 personas</div>
+      <div class="equipo-ramas">
+        <div class="equipo-rama"><div class="equipo-rama-head"><div class="equipo-rama-tag">Ejecutiva</div><div class="equipo-rama-count">1</div></div><div class="equipo-pers"><div class="equipo-avatar small">AM</div><div class="equipo-info"><div class="equipo-rol">Account Manager</div></div></div></div>
+        <div class="equipo-rama"><div class="equipo-rama-head"><div class="equipo-rama-tag">Creativa</div><div class="equipo-rama-count">4</div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">PC</div><div class="equipo-info"><div class="equipo-rol">Principal Copy</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">PL</div><div class="equipo-info"><div class="equipo-rol">Planner</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">SC</div><div class="equipo-info"><div class="equipo-rol">Supporting Copy</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">SW</div><div class="equipo-info"><div class="equipo-rol">Scriptwriter</div></div></div>
+        </div>
+        <div class="equipo-rama"><div class="equipo-rama-head"><div class="equipo-rama-tag">Arte</div><div class="equipo-rama-count">3</div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">PG</div><div class="equipo-info"><div class="equipo-rol">Principal Graphic Designer</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">SG</div><div class="equipo-info"><div class="equipo-rol">Supporting Graphic Designer</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">3D</div><div class="equipo-info"><div class="equipo-rol">3D Artist</div></div></div>
+        </div>
+        <div class="equipo-rama"><div class="equipo-rama-head"><div class="equipo-rama-tag">Audiovisual</div><div class="equipo-rama-count">3</div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">CM</div><div class="equipo-info"><div class="equipo-rol">Camera</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">PD</div><div class="equipo-info"><div class="equipo-rol">Producer</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">ED</div><div class="equipo-info"><div class="equipo-rol">Editor</div></div></div>
+        </div>
+        <div class="equipo-rama"><div class="equipo-rama-head"><div class="equipo-rama-tag">PR</div><div class="equipo-rama-count">2</div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">RS</div><div class="equipo-info"><div class="equipo-rol">PR Specialist</div></div></div>
+          <div class="equipo-pers"><div class="equipo-avatar small">RS</div><div class="equipo-info"><div class="equipo-rol">PR Specialist</div></div></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -4508,7 +4771,13 @@
   <div class="container">
     <div class="section-tag">03 · Capacidades de la agencia</div>
     <h2 class="section-title">Lo que la agencia <em>suma</em> a la operación de AKT.</h2>
-    <p class="section-lead">Seis capacidades que aportan especialización, criterio y velocidad para sostener la presencia digital de la marca.</p>
+    <p class="section-lead">Capacidades que aportan especialización, criterio y velocidad para sostener la presencia digital de la marca.</p>
+
+    <div class="funnel-summary" style="margin-top:32px;grid-template-columns:repeat(3,1fr);">
+      <div class="funnel-sum"><div class="lab">Piezas trimestre</div><div class="v">197<sub style="font-size:18px;color:var(--red)">+</sub></div><div class="d">Producidas y publicadas entre febrero y abril 2026.</div></div>
+      <div class="funnel-sum"><div class="lab">Rodajes</div><div class="v">13<sub style="font-size:18px;color:var(--red)">+</sub></div><div class="d">Heros, cápsulas, cubrimientos y producciones especiales.</div></div>
+      <div class="funnel-sum"><div class="lab">Creadores activados</div><div class="v">45<sub style="font-size:18px;color:var(--red)">+</sub></div><div class="d">Red nacional con 9–12 activaciones mensuales.</div></div>
+    </div>
 
     <div class="caps-grid">
 
@@ -4532,7 +4801,7 @@
       <div class="cap-card lg">
         <div class="cap-num">02</div>
         <span class="cap-tag">Video Hero · Producción</span>
-        <h4>Producción con intención de marca, no solo ejecución audiovisual.</h4>
+        <h4>Producción profesional.</h4>
         <p>Cada producción se construye desde una intención clara de marca, no solo desde la ejecución audiovisual. Desde campañas y cápsulas hasta cubrimientos y contenido detrás de cámaras, todo se desarrolla con dirección creativa, arte y narrativa alineadas bajo un mismo criterio.</p>
         <div class="cap-stats-row">
           <div class="cs"><div class="v">13<sub style="font-size:14px;color:var(--red)">+</sub></div><div class="l">Rodajes en el trimestre</div></div>
@@ -4553,7 +4822,7 @@
       <div class="cap-card md">
         <div class="cap-num">04</div>
         <span class="cap-tag">IA y contenido experimental</span>
-        <h4>IA donde aporta, no donde sobra.</h4>
+        <h4>IA aplicada al contenido.</h4>
         <p>Producción asistida por IA para piezas puntuales, conceptos visuales rápidos y territorios que con producción tradicional no se cubrían. Complementa el rodaje, no lo reemplaza.</p>
         <span class="cap-akt-badge">AKT también explora</span>
       </div>
@@ -4564,22 +4833,6 @@
         <span class="cap-tag">Estrategia con influenciadores</span>
         <h4>Match real con la marca.</h4>
         <p>Creadores escogidos por afinidad y desempeño orgánico, no por inventario. Las activaciones se trabajan con criterio editorial, integradas al contenido y no como pauta encadenada.</p>
-      </div>
-
-      <!-- 06 · DIFERENCIAL POR PLATAFORMA (sm) -->
-      <div class="cap-card sm">
-        <div class="cap-num">06</div>
-        <span class="cap-tag">Diferencial por plataforma</span>
-        <h4>Cada canal con su propia pieza.</h4>
-        <p>Guion, ritmo y duración cambian entre Instagram, TikTok, Facebook y LinkedIn. No es la misma pieza recortada en tres formatos: cada canal recibe su versión.</p>
-      </div>
-
-      <!-- 07 · MODELO OPERATIVO (sm) -->
-      <div class="cap-card sm">
-        <div class="cap-num">07</div>
-        <span class="cap-tag">Modelo operativo</span>
-        <h4>Una sola dirección.</h4>
-        <p>Estrategia, creación y producción operan con un mismo criterio. Para el área digital eso significa menos coordinación entre proveedores y un estándar más parejo entre piezas.</p>
       </div>
 
     </div>
@@ -4615,127 +4868,89 @@
   <div class="container">
     <div class="section-tag">04 · Casos · ejecución que habla sola</div>
     <h2 class="section-title">El trimestre, <em>en piezas reales</em>.</h2>
-    <p class="section-lead">Siete piezas elegidas por lo que muestran de la operación: velocidad, capacidad creativa, narrativa, uso de IA y trabajo con creadores.</p>
+    <p class="section-lead">Cinco objetivos buscados durante el trimestre, vistos a través de las piezas que se publicaron para responderles.</p>
 
-    <div class="casos-7-grid">
-
-      <!-- Caso 01 -->
-      <div class="caso-7 wide">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DVeJMYBljB3/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 01</span>
-            <span class="caso-7-objective">Exploración de formatos</span>
-          </div>
-          <h4>Lanzamiento NKD Classic con tratamiento editorial.</h4>
-          <div class="caso-7-type">Carrusel · Post de marca · Instagram</div>
-          <a class="caso-7-link" href="https://www.instagram.com/p/DVeJMYBljB3/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
+    <!-- Caso 01 · Lanzamiento 360 (JET EVO sigue como bloque protagonista arriba) -->
+    <div class="case-with-embed">
+      <div class="case-info">
+        <div class="case-tag">Caso 01 · Lanzamiento 360</div>
+        <h4>JET EVO trabajado como campaña, no como post.</h4>
+        <p>Para el lanzamiento del JET EVO se desplegó un sistema completo: rodaje hero, cápsulas técnicas, contenido editorial para redes y adaptaciones por canal. Cada pieza con la misma dirección de arte y la misma narrativa, no como anuncios separados.</p>
+        <p style="font-size:13px;color:var(--text-3);">Ver bloque destacado JET EVO ↑</p>
       </div>
-
-      <!-- Caso 02 -->
-      <div class="caso-7">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DVMBRIOjqwr/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 02</span>
-            <span class="caso-7-objective">Reacción a tiempo</span>
-          </div>
-          <h4>Contenido coyuntural producido y publicado en horas.</h4>
-          <div class="caso-7-type">Post reactivo · Instagram</div>
-          <a class="caso-7-link" href="https://www.instagram.com/p/DVMBRIOjqwr/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
+      <div class="case-embed">
+        <iframe src="https://www.instagram.com/p/DUlhTG1FjZ_/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <a class="ig-embed-link" href="https://www.instagram.com/p/DUlhTG1FjZ_/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
       </div>
-
-      <!-- Caso 03 -->
-      <div class="caso-7">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DW40NCimZP7/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 03</span>
-            <span class="caso-7-objective">Real time market</span>
-          </div>
-          <h4>Trend del momento cruzado con causa de marca.</h4>
-          <div class="caso-7-type">Post oportuno · Instagram · MFME</div>
-          <a class="caso-7-link" href="https://www.instagram.com/p/DW40NCimZP7/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
-      </div>
-
-      <!-- Caso 04 · STORYTELLING -->
-      <div class="caso-7 wide">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DUti0xMiQyw/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 04</span>
-            <span class="caso-7-objective">Storytelling</span>
-          </div>
-          <h4>Pieza A/V hero con dirección de arte y concepto.</h4>
-          <div class="caso-7-type">Reel · Storytelling de marca</div>
-          <a class="caso-7-link" href="https://www.instagram.com/reel/DUti0xMiQyw/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
-      </div>
-
-      <!-- Caso 05 · IA -->
-      <div class="caso-7">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DULeigvjyTz/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 05</span>
-            <span class="caso-7-objective">Contenido con IA</span>
-          </div>
-          <h4>Pieza experimental producida con IA, dentro del estándar visual de marca.</h4>
-          <div class="caso-7-type">Video · Producción asistida por IA</div>
-          <a class="caso-7-link" href="https://www.instagram.com/p/DULeigvjyTz/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
-      </div>
-
-      <!-- Caso 06 · CREADOR DE CONTENIDO (Miguel Henao) -->
-      <div class="caso-7 wide">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DYBECQ8JfHU/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 06</span>
-            <span class="caso-7-objective">Creador de contenido</span>
-          </div>
-          <h4>Colaboración con @miguelhenaoshow · 1,2M visualizaciones, 95.7% audiencia nueva.</h4>
-          <div class="caso-7-type">Reel colaborativo · PR + Contenido + Influencer</div>
-          <a class="caso-7-link" href="https://www.instagram.com/reel/DYBECQ8JfHU/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
-      </div>
-
-      <!-- Caso 07 · STORYTELLING MFME -->
-      <div class="caso-7 wide">
-        <div class="caso-7-embed">
-          <iframe src="https://www.instagram.com/p/DVOovXRDpyQ/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-        </div>
-        <div class="caso-7-body">
-          <div class="caso-7-head">
-            <span class="caso-7-num">Caso 07</span>
-            <span class="caso-7-objective">Storytelling MFME</span>
-          </div>
-          <h4>Narrativa MFME con tratamiento emocional, que conecta con casos reales de la audiencia.</h4>
-          <div class="caso-7-type">Post · Storytelling · MFME</div>
-          <a class="caso-7-link" href="https://www.instagram.com/p/DVOovXRDpyQ/" target="_blank" rel="noopener">Ver pieza ↗</a>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Caso 02 · Viralidad -->
+    <div class="case-with-embed reverse">
+      <div class="case-info">
+        <div class="case-tag">Caso 02 · Viralidad</div>
+        <h4>Colaboración con @miguelhenaoshow: 1,2M de visualizaciones, 95,7% audiencia nueva.</h4>
+        <p>La integración entre PR, contenido y creador conectó la marca con audiencias por fuera de la base instalada. El reel llegó a un público que no seguía a AKT y movió la conversación más allá del feed propio.</p>
+      </div>
+      <div class="case-embed">
+        <iframe src="https://www.instagram.com/p/DYBECQ8JfHU/embed/captioned/" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <a class="ig-embed-link" href="https://www.instagram.com/p/DYBECQ8JfHU/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+      </div>
+    </div>
+
+    <!-- Caso 03 · Aprovechar marketing real time (DOS PIEZAS AGRUPADAS) -->
+    <div class="case-with-embed-pair">
+      <div class="case-info">
+        <div class="case-tag">Caso 03 · Marketing real time</div>
+        <h4>Cruzar el trend del momento con causa de marca.</h4>
+        <p>Cuando un trend se vuelve oportunidad, la agencia lo cruza con el contenido editorial de AKT —MFME, momentos culturales, noticias del segmento— para que la pieza sostenga relevancia sin perder el tono propio.</p>
+      </div>
+      <div class="case-embed-pair-grid">
+        <div class="case-embed">
+          <iframe src="https://www.instagram.com/p/DXK3S6JgByx/embed/captioned/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          <a class="ig-embed-link" href="https://www.instagram.com/p/DXK3S6JgByx/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </div>
+        <div class="case-embed">
+          <iframe src="https://www.instagram.com/p/DW40NCimZP7/embed/captioned/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          <a class="ig-embed-link" href="https://www.instagram.com/p/DW40NCimZP7/?img_index=1" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caso 04 · Respuestas rápidas en el sector -->
+    <div class="case-with-embed reverse">
+      <div class="case-info">
+        <div class="case-tag">Caso 04 · Respuesta rápida</div>
+        <h4>Pieza coyuntural producida y publicada el mismo día.</h4>
+        <p>El sector moto se mueve por noticias, válidas, fechas especiales y conversaciones que duran 48 horas. La operación cubre estos momentos con piezas hechas en el día, sin perder estándar visual.</p>
+      </div>
+      <div class="case-embed">
+        <iframe src="https://www.instagram.com/p/DVMBRIOjqwr/embed/captioned/" width="100%" height="540" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <a class="ig-embed-link" href="https://www.instagram.com/p/DVMBRIOjqwr/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+      </div>
+    </div>
+
+    <!-- Caso 05 · Conexión emocional (DOS PIEZAS AGRUPADAS) -->
+    <div class="case-with-embed-pair">
+      <div class="case-info">
+        <div class="case-tag">Caso 05 · Conexión emocional</div>
+        <h4>Narrativa MFME con tratamiento emocional, conectada a casos reales de la audiencia.</h4>
+        <p>El motociclista no maneja solo para sí mismo —maneja para llegar a casa. MFME se sostiene como contenido editorial con historias reales, no como pieza institucional. Es la causa que justifica ponerse el casco, todos los meses.</p>
+      </div>
+      <div class="case-embed-pair-grid">
+        <div class="case-embed">
+          <iframe src="https://www.instagram.com/p/DVOovXRDpyQ/embed/captioned/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          <a class="ig-embed-link" href="https://www.instagram.com/p/DVOovXRDpyQ/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </div>
+        <div class="case-embed">
+          <iframe src="https://www.instagram.com/reel/DUti0xMiQyw/embed/captioned/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+          <a class="ig-embed-link" href="https://www.instagram.com/reel/DUti0xMiQyw/" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ====================== MFME × ASOBDIM ====================== -->
 <section class="causas-combined" id="causas">
   <div class="container">
     <div class="section-tag">05 · MFME × ASOBDIM</div>
@@ -5022,197 +5237,172 @@
   </div>
 </section>
 
-<!-- Tabla detallada -->
-<section style="padding:40px 0 80px;">
+<!-- TABLA FEE · resumen + detalle toggleable -->
+<section style="padding:40px 0 60px;">
   <div class="container">
     <div class="section-tag">Composición del fee · Mensual</div>
     <h2 class="section-title">Lo que está dentro del fee, traducido a entregables <em>concretos</em>.</h2>
     <p class="section-lead">Desde la planeación mensual hasta el desarrollo de campañas, contenidos audiovisuales y piezas digitales, el fee integra las capacidades necesarias para mantener activa y evolucionando la comunicación de la marca.</p>
-    <p class="section-lead" style="margin-top:-20px;font-size:15px;color:var(--text-3);">Cada línea es un entregable verificable. La columna "Variación" muestra lo que se entregó por encima (verde) o por debajo (naranja) del fee mensual.</p>
 
-    <div class="fee-legend-row">
-      <span class="lg"><span class="pill pos">+</span> Sobreentrega · contenido adicional al fee</span>
-      <span class="lg"><span class="pill zero">0</span> Cumplimiento exacto del fee mensual</span>
-      <span class="lg"><span class="pill neg">−</span> Por debajo del fee · sin completar</span>
-    </div>
-
-    <div class="fee-table-wrap" style="margin-top:24px;">
-      <table class="fee-table">
+    <!-- Tabla resumen simplificada -->
+    <div class="fee-table-wrap" style="margin-top:32px;">
+      <table class="fee-table fee-table-summary">
         <thead>
           <tr>
-            <th>Entregable</th>
-            <th>Fee · mes</th>
-            <th class="mes">Feb</th>
-            <th>Var</th>
-            <th class="mes">Mar</th>
-            <th>Var</th>
-            <th class="mes">Abr</th>
-            <th>Var</th>
+            <th style="width:32%;">Entregable mensual</th>
+            <th style="width:18%;text-align:left;">Fee / mes</th>
+            <th style="width:50%;text-align:left;">¿Qué incluye?</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Planteamiento creativo y estratégico de campaña</td>
-            <td class="fee-num">1</td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-          </tr>
-          <tr>
-            <td>Workshop estratégico mensual</td>
-            <td class="fee-num">1</td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-          </tr>
-          <tr>
-            <td>Producción audiovisual y cubrimientos</td>
-            <td class="fee-num">4</td>
-            <td class="fee-num">7</td>
-            <td><span class="var-pos">+3</span></td>
-            <td class="fee-num">5</td>
-            <td><span class="var-pos">+1</span></td>
-            <td class="fee-num">3</td>
-            <td><span class="var-neg">−1</span></td>
+            <td>Planteamiento estratégico y creativo</td>
+            <td class="fee-num" style="text-align:left;">1 reunión</td>
+            <td style="text-align:left;font-size:13px;">Concepto estratégico · enfoque creativo · lineamientos de campaña · visión general de comunicación</td>
           </tr>
           <tr>
             <td>Planeación mensual</td>
-            <td class="fee-num">1</td>
-            <td class="fee-num">7</td>
-            <td><span class="var-pos">+6</span></td>
-            <td class="fee-num">7</td>
-            <td><span class="var-pos">+6</span></td>
-            <td class="fee-num">5</td>
-            <td><span class="var-pos">+4</span></td>
+            <td class="fee-num" style="text-align:left;">1 reunión</td>
+            <td style="text-align:left;font-size:13px;">Workshop mensual AKT × Agencia · revisión de prioridades · calendarización · organización de contenidos y campañas</td>
           </tr>
           <tr>
-            <td>Cubrimiento ASOBDIM</td>
-            <td class="fee-num">1</td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
+            <td>Seguimiento a la estrategia</td>
+            <td class="fee-num" style="text-align:left;">4 reuniones</td>
+            <td style="text-align:left;font-size:13px;">Espacios de seguimiento operativo · revisión de avances · ajustes tácticos · alineación entre equipos</td>
           </tr>
           <tr>
-            <td>Posts / Carruseles</td>
-            <td class="fee-num">8</td>
-            <td class="fee-num">5</td>
-            <td><span class="var-neg">−3</span></td>
-            <td class="fee-num">9</td>
-            <td><span class="var-pos">+1</span></td>
-            <td class="fee-num">14</td>
-            <td><span class="var-pos">+6</span></td>
+            <td>Producción audiovisual y cubrimientos</td>
+            <td class="fee-num" style="text-align:left;">4 jornadas</td>
+            <td style="text-align:left;font-size:13px;">Rodajes de campaña · contenido MFME · cubrimiento ASOBDIM · BTS · registro de eventos · contenido audiovisual para social</td>
           </tr>
           <tr>
-            <td>Contenido MFME</td>
-            <td class="fee-num">2</td>
-            <td class="fee-num">2</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">2</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">2</td>
-            <td><span class="var-zero">0</span></td>
-          </tr>
-          <tr class="row-extra">
-            <td>Historias</td>
-            <td class="fee-num">—</td>
-            <td class="fee-num">10</td>
-            <td><span class="var-pos">+10</span></td>
-            <td class="fee-num">12</td>
-            <td><span class="var-pos">+12</span></td>
-            <td class="fee-num">17</td>
-            <td><span class="var-pos">+17</span></td>
-          </tr>
-          <tr class="row-extra">
-            <td>Historias MFME</td>
-            <td class="fee-num">—</td>
-            <td class="fee-num">2</td>
-            <td><span class="var-pos">+2</span></td>
-            <td class="fee-num">2</td>
-            <td><span class="var-pos">+2</span></td>
-            <td class="fee-num">2</td>
-            <td><span class="var-pos">+2</span></td>
+            <td>Adaptaciones gráficas de campaña</td>
+            <td class="fee-num" style="text-align:left;">10 piezas</td>
+            <td style="text-align:left;font-size:13px;">Posts · carruseles · adaptaciones gráficas · piezas para pauta y social media</td>
           </tr>
           <tr>
-            <td>Reels digitales (con repuestos y ASOBDIM)</td>
-            <td class="fee-num">9</td>
-            <td class="fee-num">11</td>
-            <td><span class="var-pos">+2</span></td>
-            <td class="fee-num">15</td>
-            <td><span class="var-pos">+6</span></td>
-            <td class="fee-num">14</td>
-            <td><span class="var-pos">+5</span></td>
+            <td>Reels digitales para social y campañas</td>
+            <td class="fee-num" style="text-align:left;">11 entregas</td>
+            <td style="text-align:left;font-size:13px;">Reels orgánicos · contenido de producto · tendencias · campañas · real time content · cápsulas tácticas · piezas de apoyo y comunicación</td>
           </tr>
           <tr>
-            <td>Video Hero · MFME · Campaña</td>
-            <td class="fee-num">1</td>
-            <td class="fee-num">2</td>
-            <td><span class="var-pos">+1</span></td>
-            <td class="fee-num">0</td>
-            <td><span class="var-neg">−1</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-zero">0</span></td>
+            <td>Video Hero de campaña</td>
+            <td class="fee-num" style="text-align:left;">1 producción</td>
+            <td style="text-align:left;font-size:13px;">Pieza audiovisual principal de campaña · storytelling · dirección creativa · edición y montaje</td>
           </tr>
           <tr>
-            <td>Video cápsulas</td>
-            <td class="fee-num">2</td>
-            <td class="fee-num">2</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">0</td>
-            <td><span class="var-neg">−2</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-neg">−1</span></td>
+            <td>Contenido editorial y always on</td>
+            <td class="fee-num" style="text-align:left;">Contenido continuo</td>
+            <td style="text-align:left;font-size:13px;">Historias Instagram · historias MFME · contenido editorial MFME · cobertura rápida · contenido de reacción · activaciones · tendencias · apoyo always on</td>
           </tr>
-          <tr class="row-extra">
-            <td>Contenido para LinkedIn</td>
-            <td class="fee-num">—</td>
-            <td class="fee-num">5</td>
-            <td><span class="var-pos">+5</span></td>
-            <td class="fee-num">3</td>
-            <td><span class="var-pos">+3</span></td>
-            <td class="fee-num">3</td>
-            <td><span class="var-pos">+3</span></td>
-          </tr>
-          <tr class="row-extra">
-            <td>Contenido para TikTok</td>
-            <td class="fee-num">—</td>
-            <td class="fee-num">4</td>
-            <td><span class="var-pos">+4</span></td>
-            <td class="fee-num">4</td>
-            <td><span class="var-pos">+4</span></td>
-            <td class="fee-num">3</td>
-            <td><span class="var-pos">+3</span></td>
-          </tr>
-          <tr class="row-extra">
-            <td>Gestión + Ideación UGC</td>
-            <td class="fee-num">—</td>
-            <td class="fee-num">2</td>
-            <td><span class="var-pos">+2</span></td>
-            <td class="fee-num">0</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">1</td>
-            <td><span class="var-pos">+1</span></td>
-          </tr>
-          <tr class="row-extra">
-            <td>Contenido adicional</td>
-            <td class="fee-num">—</td>
-            <td class="fee-num">0</td>
-            <td><span class="var-zero">0</span></td>
-            <td class="fee-num">6</td>
-            <td><span class="var-pos">+6</span></td>
-            <td class="fee-num">9</td>
-            <td><span class="var-pos">+9</span></td>
+          <tr>
+            <td>Contenido adicional y formatos emergentes</td>
+            <td class="fee-num" style="text-align:left;">Según necesidad</td>
+            <td style="text-align:left;font-size:13px;">Contenido para TikTok · LinkedIn · formatos experimentales · contenido adicional fuera del fee · adaptación a nuevas plataformas</td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- Toggle: Ver detalle -->
+    <div style="margin-top:32px;display:flex;justify-content:center;">
+      <button type="button" id="feeDetailToggle" class="fee-detail-btn" onclick="toggleFeeDetail()">
+        <span class="lbl-show">Ver detalle por mes ↓</span>
+        <span class="lbl-hide" style="display:none;">Ocultar detalle ↑</span>
+      </button>
+    </div>
+
+    <!-- Detalle (oculto por defecto) -->
+    <div id="feeDetail" style="display:none;margin-top:32px;">
+
+      <div class="fee-legend-row">
+        <span class="lg"><span class="pill pos">+</span> Sobreentrega · contenido adicional al fee</span>
+        <span class="lg"><span class="pill zero">0</span> Cumplimiento exacto del fee mensual</span>
+        <span class="lg"><span class="pill neg">−</span> Por debajo del fee · sin completar</span>
+      </div>
+
+      <div class="fee-table-wrap" style="margin-top:24px;">
+        <table class="fee-table">
+          <thead>
+            <tr>
+              <th>Entregable mensual</th>
+              <th>Fee · mes</th>
+              <th class="mes">Feb</th>
+              <th>Var</th>
+              <th class="mes">Mar</th>
+              <th>Var</th>
+              <th class="mes">Abr</th>
+              <th>Var</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Planteamiento estratégico y creativo</td>
+              <td class="fee-num">1</td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+            </tr>
+            <tr>
+              <td>Planeación mensual</td>
+              <td class="fee-num">1</td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+            </tr>
+            <tr>
+              <td>Seguimiento a la estrategia</td>
+              <td class="fee-num">4</td>
+              <td class="fee-num">7</td><td><span class="var-pos">+3</span></td>
+              <td class="fee-num">7</td><td><span class="var-pos">+3</span></td>
+              <td class="fee-num">5</td><td><span class="var-pos">+1</span></td>
+            </tr>
+            <tr>
+              <td>Producción audiovisual y cubrimientos</td>
+              <td class="fee-num">4</td>
+              <td class="fee-num">8</td><td><span class="var-pos">+4</span></td>
+              <td class="fee-num">6</td><td><span class="var-pos">+2</span></td>
+              <td class="fee-num">4</td><td><span class="var-zero">0</span></td>
+            </tr>
+            <tr>
+              <td>Adaptaciones gráficas de campaña</td>
+              <td class="fee-num">10</td>
+              <td class="fee-num">5</td><td><span class="var-neg">−5</span></td>
+              <td class="fee-num">9</td><td><span class="var-neg">−1</span></td>
+              <td class="fee-num">14</td><td><span class="var-pos">+4</span></td>
+            </tr>
+            <tr>
+              <td>Reels digitales para social y campañas</td>
+              <td class="fee-num">11</td>
+              <td class="fee-num">13</td><td><span class="var-pos">+2</span></td>
+              <td class="fee-num">15</td><td><span class="var-pos">+4</span></td>
+              <td class="fee-num">15</td><td><span class="var-pos">+4</span></td>
+            </tr>
+            <tr>
+              <td>Video Hero de campaña</td>
+              <td class="fee-num">1</td>
+              <td class="fee-num">2</td><td><span class="var-pos">+1</span></td>
+              <td class="fee-num">0</td><td><span class="var-neg">−1</span></td>
+              <td class="fee-num">1</td><td><span class="var-zero">0</span></td>
+            </tr>
+            <tr>
+              <td>Contenido editorial y always on</td>
+              <td class="fee-num">—</td>
+              <td class="fee-num">14</td><td><span class="var-pos">+14</span></td>
+              <td class="fee-num">16</td><td><span class="var-pos">+16</span></td>
+              <td class="fee-num">21</td><td><span class="var-pos">+21</span></td>
+            </tr>
+            <tr>
+              <td>Contenido adicional y formatos emergentes</td>
+              <td class="fee-num">—</td>
+              <td class="fee-num">11</td><td><span class="var-pos">+11</span></td>
+              <td class="fee-num">13</td><td><span class="var-pos">+13</span></td>
+              <td class="fee-num">16</td><td><span class="var-pos">+16</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 </section>
@@ -5459,9 +5649,6 @@
   </section>
 
   <section class="page" id="page-resultados">
-    
-
-
 
 <section class="anexo-hero">
   <div class="container">
@@ -5469,254 +5656,136 @@
     <div class="anexo-num-big">03</div>
     <h1 class="anexo-title">Resultados <em>Feb — Abr</em>.</h1>
     <p class="anexo-sub">Comparativa del trimestre Q26 (febrero, marzo y abril 2026) frente al trimestre comparable Q25 (noviembre, diciembre y enero del periodo anterior). Datos consolidados de Instagram, TikTok y Facebook.</p>
-    <div class="anexo-meta">
-      <span class="chip"><span class="dot"></span> Q26 vs Q25</span>
-      <span class="chip">3 canales · IG · TK · FB</span>
-      <span class="chip">Datos al cierre de abril</span>
-    </div>
   </div>
 </section>
 
-<!-- Highlights del trimestre -->
-<section style="padding:40px 0 60px;">
+<section class="metrics" id="metrics" style="padding:60px 0 100px;">
   <div class="container">
-    <div class="section-tag">Highlights del trimestre</div>
-    <h2 class="section-title">Los crecimientos más fuertes del <em>periodo</em>.</h2>
-    <p class="section-lead">Cinco métricas donde el trimestre cerró mejor que el comparable anterior. Hay caídas que también vale mostrar y se incluyen más abajo por canal.</p>
+    <div class="section-tag">Datos del trimestre · Feb — Mar — Abr 2026</div>
+    <h2 class="section-title">Crecimiento <em>real</em> vs. el mismo trimestre del año anterior.</h2>
+    <p class="section-lead">Comparativa Q26 (febrero, marzo y abril 2026) vs. Q25 (noviembre, diciembre y enero del trimestre anterior). Datos consolidados de Instagram, TikTok y Facebook.</p>
 
+    <!-- Highlights row · crecimientos más fuertes -->
     <div class="metrics-row metrics-row-5 metrics-hi">
       <div class="metric-block metric-hi">
-        <div class="label">Impresiones historias · IG</div>
+        <div class="label">Impresiones en historias · Instagram</div>
         <div class="v">+66<small>×</small></div>
         <div class="delta">▲ De 23.7K a 1.6M</div>
-        <div class="insight">El crecimiento más fuerte del trimestre. Las historias dejaron de ser secundarias y se convirtieron en canal de alcance.</div>
+        <div class="insight">El crecimiento más significativo del trimestre: las historias dejaron de ser un formato secundario y se convirtieron en un canal de alcance.</div>
       </div>
       <div class="metric-block metric-hi">
         <div class="label">Interacciones · Instagram</div>
         <div class="v">+94<small>%</small></div>
         <div class="delta">▲ De 7.294 a 14.147</div>
-        <div class="insight">Casi se duplicaron las interacciones por contenido. Indicador directo de afinidad con la audiencia.</div>
+        <div class="insight">Casi se duplicaron las interacciones por contenido. Indicador directo de afinidad y conexión con la audiencia.</div>
       </div>
       <div class="metric-block metric-hi">
-        <div class="label">Alcance por post · IG</div>
+        <div class="label">Alcance promedio por post · Instagram</div>
         <div class="v">+90<small>%</small></div>
         <div class="delta">▲ De 8.843 a 16.803</div>
         <div class="insight">Cada post llega a casi el doble de personas. La curaduría editorial está rindiendo sobre el algoritmo.</div>
       </div>
       <div class="metric-block metric-hi">
-        <div class="label">Alcance por post · FB</div>
+        <div class="label">Alcance promedio por post · Facebook</div>
         <div class="v">+71<small>%</small></div>
         <div class="delta">▲ De 28.981 a 49.482</div>
-        <div class="insight">Cada publicación alcanza más cuentas que en el trimestre comparable.</div>
+        <div class="insight">Facebook también levantó: cada publicación alcanza más cuentas que en el trimestre comparable del año anterior.</div>
       </div>
       <div class="metric-block metric-hi">
         <div class="label">Engagement · Facebook</div>
         <div class="v">+35<small>%</small></div>
         <div class="delta">▲ De 7.78 a 10.52</div>
-        <div class="insight">Crecimiento sólido del engagement promedio en la red con la base instalada más grande.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="canal-section">
-  <div class="container">
-    <div class="canal-head">
-      <div class="canal-name"><div class="ic ig">IG</div> Instagram</div>
-      <span class="canal-period">@aktmotosoficial · Q26 vs Q25</span>
-    </div>
-    <div class="canal-metrics">
-      <div class="metric-block">
-        <div class="label">Seguidores</div>
-        <div class="v">254.3K</div>
-        <div class="delta">▲ +3.4% · +8.273</div>
-        <div class="insight">Crecimiento estable sostenido por contenido editorial.</div>
-      </div>
-      <div class="metric-block">
-        <div class="label">Engagement</div>
-        <div class="v">3.66<small>%</small></div>
-        <div class="delta">▲ +2% · de 3.59 a 3.66</div>
-        <div class="insight">Nivel sostenido con base de comunidad ampliada.</div>
-      </div>
-      <div class="metric-block">
-        <div class="label">Visualizaciones totales</div>
-        <div class="v">22.08M</div>
-        <div class="delta warm">▼ −43% · vs 38.85M</div>
-        <div class="insight">Caída en volumen total compensada por mejor calidad por pieza.</div>
-      </div>
-      <div class="metric-block">
-        <div class="label">Alcance medio diario</div>
-        <div class="v">211K</div>
-        <div class="delta warm">▼ −24% · vs 276K</div>
-        <div class="insight">Bajó el alcance diario, pero subió el alcance por post (+90%).</div>
+        <div class="insight">Crecimiento sólido del engagement promedio en Facebook, la red con la base instalada más grande.</div>
       </div>
     </div>
 
-    <div class="charts-wrap">
-      <div class="chart-card-min">
-        <h4>Crecimiento Q26 vs Q25 · Instagram</h4>
-        <div class="sub">% de variación por métrica clave</div>
-        <div class="chart-wrap"><canvas id="igGrowth"></canvas></div>
-        <div class="ins">Cinco métricas en verde, dos en naranja. La calidad de cada pieza creció a costa de un volumen total más controlado.</div>
-      </div>
-      <div class="chart-card-min">
-        <h4>Impresiones en historias · Q26 vs Q25</h4>
-        <div class="sub">El cambio más significativo del trimestre</div>
-        <div class="chart-wrap"><canvas id="igStories"></canvas></div>
-        <div class="ins">De 23.772 a 1.601.184 impresiones. Las historias pasaron de ser un formato secundario a canal de alcance principal.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TIKTOK -->
-<section class="canal-section">
-  <div class="container">
-    <div class="canal-head">
-      <div class="canal-name"><div class="ic tk">TT</div> TikTok</div>
-      <span class="canal-period">@aktmotos · Q26 vs Q25</span>
-    </div>
-    <div class="canal-metrics">
+    <!-- Resto de métricas + las dos honestas -->
+    <div class="metrics-row metrics-row-5">
       <div class="metric-block">
-        <div class="label">Seguidores</div>
-        <div class="v">156.4K</div>
-        <div class="delta">▲ +7.9% · +11.508</div>
-        <div class="insight">Comunidad orgánica creciendo en el canal con mayor potencial de descubrimiento.</div>
+        <div class="label">Seguidores · TikTok</div>
+        <div class="v">+8<small>%</small></div>
+        <div class="delta">▲ De 144.872 a 156.380</div>
+        <div class="insight">Crecimiento de comunidad orgánica en TikTok, el canal con mayor potencial de descubrimiento.</div>
       </div>
       <div class="metric-block">
-        <div class="label">Interacciones</div>
-        <div class="v">49.97K</div>
-        <div class="delta warm">▼ −27% · vs 68.48K</div>
-        <div class="insight">Caída en interacciones; foco en contenido de alcance por encima del de interacción.</div>
+        <div class="label">Seguidores · Instagram</div>
+        <div class="v">+3<small>%</small></div>
+        <div class="delta">▲ De 246.034 a 254.307</div>
+        <div class="insight">Crecimiento estable de la comunidad de Instagram, sostenido por el contenido editorial.</div>
       </div>
       <div class="metric-block">
-        <div class="label">Visualizaciones video</div>
-        <div class="v">26.04M</div>
-        <div class="delta warm">▼ −7.5% · vs 28.16M</div>
-        <div class="insight">Ligera caída compensada con crecimiento sostenido de comunidad.</div>
+        <div class="label">Visualizaciones de video · TikTok</div>
+        <div class="v">−7<small>%</small></div>
+        <div class="delta warm">▼ De 28.16M a 26.04M</div>
+        <div class="insight">Ligera caída en visualizaciones de TikTok respecto al trimestre comparable; se compensa con crecimiento sostenido de comunidad y mejor engagement por pieza.</div>
       </div>
       <div class="metric-block">
-        <div class="label">Crecimiento comunidad</div>
-        <div class="v">+11.5K</div>
-        <div class="delta">▲ Trimestre Feb — Abr</div>
-        <div class="insight">Nuevos seguidores netos en el trimestre. Comunidad activa y creciendo.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FACEBOOK -->
-<section class="canal-section">
-  <div class="container">
-    <div class="canal-head">
-      <div class="canal-name"><div class="ic fb">FB</div> Facebook</div>
-      <span class="canal-period">AKT Motos · Q26 vs Q25</span>
-    </div>
-    <div class="canal-metrics">
-      <div class="metric-block">
-        <div class="label">Seguidores</div>
-        <div class="v">453.1K</div>
-        <div class="delta">▲ +0.7% · +3.108</div>
-        <div class="insight">Base instalada estable. La red con mayor volumen consolidado.</div>
+        <div class="label">Engagement · Instagram</div>
+        <div class="v">+2<small>%</small></div>
+        <div class="delta">▲ De 3.59 a 3.66</div>
+        <div class="insight">Engagement sostenido en Instagram, manteniendo el nivel del trimestre anterior con base de comunidad ampliada.</div>
       </div>
       <div class="metric-block">
-        <div class="label">Engagement</div>
-        <div class="v">10.52<small>%</small></div>
-        <div class="delta">▲ +35% · de 7.78 a 10.52</div>
-        <div class="insight">Crecimiento sólido. La audiencia FB está más activa que el trimestre anterior.</div>
-      </div>
-      <div class="metric-block">
-        <div class="label">Alcance promedio por post</div>
-        <div class="v">49.48K</div>
-        <div class="delta">▲ +71% · de 28.98K a 49.48K</div>
-        <div class="insight">Cada publicación alcanza más cuentas. La calidad editorial está rindiendo.</div>
-      </div>
-      <div class="metric-block">
-        <div class="label">Visualizaciones contenido</div>
-        <div class="v">175.84M</div>
-        <div class="delta warm">▼ −7.6% · vs 190.39M</div>
-        <div class="insight">Caída moderada en volumen total; el alcance por pieza compensa con creces.</div>
+        <div class="label">Visualizaciones · Facebook</div>
+        <div class="v">−8<small>%</small></div>
+        <div class="delta warm">▼ De 190.39M a 175.84M</div>
+        <div class="insight">Caída moderada en visualizaciones de Facebook frente al trimestre comparable; el alcance promedio por publicación creció +71%, lo que indica mejor calidad por pieza.</div>
       </div>
     </div>
 
-    <div class="charts-wrap">
-      <div class="chart-card-min">
-        <h4>Reacciones e interacciones · FB</h4>
-        <div class="sub">Comparativo Q26 vs Q25</div>
-        <div class="chart-wrap"><canvas id="fbReact"></canvas></div>
-        <div class="ins">+1.5% en reacciones (de 167.414 a 169.889). La audiencia FB sostiene la actividad con la base instalada.</div>
+    <!-- Charts row 1 -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h4>Visualizaciones orgánicas · trimestre</h4>
+            <div class="sub">Instagram + TikTok · febrero, marzo, abril 2026</div>
+          </div>
+          <div class="chart-pills">
+            <span class="chart-pill">IG</span><span class="chart-pill">TT</span>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="chartVolume"></canvas></div>
+        <div class="insight">El trimestre cerró con visualizaciones consistentes mes a mes. TikTok concentra el alcance masivo orgánico; Instagram el alcance más editorializado.</div>
       </div>
-      <div class="chart-card-min">
-        <h4>Distribución de comunidad · Q26</h4>
-        <div class="sub">Cierre de trimestre · todos los canales</div>
-        <div class="chart-wrap"><canvas id="commDist"></canvas></div>
-        <div class="ins">863.8K seguidores activos en total. Facebook concentra la base instalada; Instagram y TikTok lideran crecimiento relativo.</div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h4>Distribución de comunidad por canal</h4>
+            <div class="sub">Cierre del trimestre · abril 2026</div>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="chartChannel"></canvas></div>
+        <div class="insight">Facebook concentra la base instalada (453.12K). Instagram y TikTok son los canales con mayor crecimiento relativo en el trimestre.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Lectura editorial -->
-<section style="padding:60px 0;">
-  <div class="container">
-    <div class="section-tag">Lectura editorial del feed</div>
-    <h2 class="section-title">Lo que pasó <em>en el contenido</em>, no solo en los números.</h2>
-    <p class="section-lead">Lo que un dashboard no dice: cómo evolucionó el lenguaje del feed durante el trimestre.</p>
+    <!-- Charts row 2 -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h4>Comunidad por canal · cierre de trimestre</h4>
+            <div class="sub">Seguidores totales al 30 abr 2026</div>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="chartPeaks"></canvas></div>
+        <div class="insight">FB lidera por base instalada; IG y TT son los canales con mayor crecimiento relativo. La comunidad total cerró en 863.80K seguidores activos.</div>
+      </div>
 
-    <div class="intel-grid" style="margin-top:30px;">
-      <div class="intel-card">
-        <div class="num">01</div>
-        <h4>Lenguaje visual editorializado</h4>
-        <p>El feed pasó de fotografía de producto a piezas con dirección de arte: tipografía editorial, paletas controladas, fotografía con concepto.</p>
-        <div class="tag-row"><span class="tag">Dirección</span><span class="tag">Tipografía</span><span class="tag">Color</span></div>
-      </div>
-      <div class="intel-card">
-        <div class="num">02</div>
-        <h4>"Viajando al Origen"</h4>
-        <p>Cubrimiento internacional desde fábrica Loncin (China) y montañas de Wulong. Mejor engagement promedio de marzo.</p>
-        <div class="tag-row"><span class="tag">Storytelling</span><span class="tag">Cadena de valor</span></div>
-      </div>
-      <div class="intel-card">
-        <div class="num">03</div>
-        <h4>Lanzamientos como sistema</h4>
-        <p>JET EVO, NKD Classic y XRS 180 ejecutados como campañas multi-pieza y multi-canal. La preventa de la XRS 180 fue el mejor post histórico del perfil.</p>
-        <div class="tag-row"><span class="tag">Sistema</span><span class="tag">Preventa</span></div>
-      </div>
-      <div class="intel-card">
-        <div class="num">04</div>
-        <h4>Reacción en horas, no en semanas</h4>
-        <p>Cubrimientos de eventos, fechas especiales y trends ejecutados sin perder calidad visual. La marca está presente cuando la conversación está caliente.</p>
-        <div class="tag-row"><span class="tag">Reactividad</span><span class="tag">Trends</span></div>
-      </div>
-      <div class="intel-card">
-        <div class="num">05</div>
-        <h4>Activación de historias</h4>
-        <p>De casi inexistentes a canal activo. Los datos de retención confirman que el contenido se consume, no se ignora.</p>
-        <div class="tag-row"><span class="tag">Daily presence</span><span class="tag">Comunidad</span></div>
-      </div>
-      <div class="intel-card">
-        <div class="num">06</div>
-        <h4>Código local, no corporativo</h4>
-        <p>Tendencias colombianas, presencia de Rigoberto Urán, moto-cultura y rutas clásicas. La marca habla con su contexto.</p>
-        <div class="tag-row"><span class="tag">Local</span><span class="tag">Embajadores</span></div>
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h4>Distribución de tipo de contenido</h4>
+            <div class="sub">Por intención editorial · período completo</div>
+          </div>
+        </div>
+        <div class="chart-wrap"><canvas id="chartType"></canvas></div>
+        <div class="insight">El balance entre lanzamiento, branding, storytelling, propósito social y reactivo refleja una parrilla balanceada, no monotemática de producto.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- Lectura final -->
-<section style="padding:40px 0 120px;">
-  <div class="container">
-    <div class="insight-block">
-      <div class="insight-ic">→</div>
-      <div>
-        <h3>Lectura del trimestre</h3>
-        <p>El trimestre cerró con cinco métricas clave en verde y dos caídas explicables. <strong>El patrón es consistente</strong>: el alcance por pieza creció en Instagram y Facebook, las historias se consolidaron como canal y la comunidad sigue sumando seguidores en TikTok e Instagram.</p>
-        <p>Las caídas en visualizaciones totales (IG, TT, FB) se explican por una mezcla más editorializada y menos masiva. <strong>No es un problema de algoritmo: es una decisión de contenido.</strong> Cada pieza llega a más personas que antes, aunque el volumen total sea más controlado.</p>
-        <p>Lo que sigue: sostener la línea editorial, profundizar en historias como canal de alcance y mantener la presencia diaria que está construyendo la comunidad.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -5724,8 +5793,6 @@
   <p>AKT × iAgency · Anexo 03 · Resultados Feb — Abr 2026</p>
   <p>Confidencial · Periodo Q26 vs Q25</p>
 </footer>
-
-
 
   </section>
 
@@ -5848,87 +5915,39 @@
       bodyFont:{family:'Inter', size:12}
     };
 
-    const elIg = document.getElementById('igGrowth');
-    if(elIg){
-      new Chart(elIg.getContext('2d'),{
+    // 1. Visualizaciones organicas trimestre (stacked bar)
+    const elVol = document.getElementById('chartVolume');
+    if(elVol){
+      new Chart(elVol.getContext('2d'),{
         type:'bar',
         data:{
-          labels:['Alcance/post','Interacciones','Engagement','Seguidores','Alcance diario','Visualizac.'],
-          datasets:[{
-            label:'% variacion Q26 vs Q25',
-            data:[90, 94, 2, 3, -24, -43],
-            backgroundColor:function(ctx){ const v = (ctx.parsed && ctx.parsed.x!=null) ? ctx.parsed.x : ctx.raw; return v>=0 ? '#1AA876' : '#E5621A'; },
-            borderRadius:6, barThickness:30
-          }]
-        },
-        options:{
-          indexAxis:'y', responsive:true, maintainAspectRatio:false,
-          plugins:{ legend:{display:false}, tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.parsed.x+'%'; }}}) },
-          scales:{
-            x:{grid:grid, ticks:{color:'#6E7A91', callback:function(v){ return v+'%'; }}},
-            y:{grid:{display:false}, ticks:{color:'#2A3F5F'}}
-          }
-        }
-      });
-    }
-
-    const elStories = document.getElementById('igStories');
-    if(elStories){
-      new Chart(elStories.getContext('2d'),{
-        type:'bar',
-        data:{
-          labels:['Q25 · Nov-Ene','Q26 · Feb-Abr'],
-          datasets:[{
-            label:'Impresiones en historias',
-            data:[23772, 1601184],
-            backgroundColor:['#6E7A91','#C12A21'],
-            borderRadius:8, barThickness:90
-          }]
+          labels:['Febrero','Marzo','Abril'],
+          datasets:[
+            {label:'Instagram (M)', data:[6.0, 8.0, 8.15], backgroundColor:'#C12A21', borderRadius:6, barThickness:32, stack:'s1'},
+            {label:'TikTok (M)', data:[10.0, 10.0, 5.95], backgroundColor:'#041E42', borderRadius:6, barThickness:32, stack:'s1'}
+          ]
         },
         options:{
           responsive:true, maintainAspectRatio:false,
-          plugins:{ legend:{display:false}, tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.parsed.y.toLocaleString('es-CO')+' impresiones'; }}}) },
+          plugins:{legend:{position:'bottom', labels:{boxWidth:10, boxHeight:10, padding:14, usePointStyle:true, pointStyle:'rectRounded'}}, tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.dataset.label+' '+c.parsed.y+'M'; }}})},
           scales:{
-            x:{grid:{display:false}, ticks:{color:'#2A3F5F'}},
-            y:{grid:grid, ticks:{color:'#6E7A91', callback:function(v){ if(v>=1e6)return (v/1e6).toFixed(1)+'M'; if(v>=1e3)return (v/1e3).toFixed(0)+'K'; return v; }}}
+            x:{stacked:true, grid:{display:false}, ticks:{color:'#2A3F5F'}},
+            y:{stacked:true, grid:grid, ticks:{color:'#6E7A91', callback:function(v){ return v+'M'; }}}
           }
         }
       });
     }
 
-    const elFb = document.getElementById('fbReact');
-    if(elFb){
-      new Chart(elFb.getContext('2d'),{
-        type:'bar',
-        data:{
-          labels:['Q25 · Nov-Ene','Q26 · Feb-Abr'],
-          datasets:[{
-            label:'Reacciones',
-            data:[167414, 169889],
-            backgroundColor:['#6E7A91','#1877F2'],
-            borderRadius:8, barThickness:90
-          }]
-        },
-        options:{
-          responsive:true, maintainAspectRatio:false,
-          plugins:{ legend:{display:false}, tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.parsed.y.toLocaleString('es-CO')+' reacciones'; }}}) },
-          scales:{
-            x:{grid:{display:false}, ticks:{color:'#2A3F5F'}},
-            y:{grid:grid, ticks:{color:'#6E7A91', callback:function(v){ return (v/1000).toFixed(0)+'K'; }}}
-          }
-        }
-      });
-    }
-
-    const elComm = document.getElementById('commDist');
-    if(elComm){
-      new Chart(elComm.getContext('2d'),{
+    // 2. Comunidad por canal (doughnut)
+    const elCh = document.getElementById('chartChannel');
+    if(elCh){
+      new Chart(elCh.getContext('2d'),{
         type:'doughnut',
         data:{
           labels:['Facebook (453K)','Instagram (254K)','TikTok (156K)'],
           datasets:[{
             data:[453.12, 254.31, 156.38],
-            backgroundColor:['#1877F2','#C12A21','#1F8FB8'],
+            backgroundColor:['#041E42','#C12A21','#1F8FB8'],
             borderColor:'#FFFFFF', borderWidth:3, hoverOffset:8
           }]
         },
@@ -5936,13 +5955,97 @@
           responsive:true, maintainAspectRatio:false, cutout:'68%',
           plugins:{
             legend:{position:'bottom', labels:{boxWidth:10, boxHeight:10, padding:14, usePointStyle:true, pointStyle:'rectRounded'}},
-            tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.label+' &middot; '+c.parsed+'K seguidores'; }}})
+            tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.label+' '+c.parsed+'K seguidores'; }}})
+          }
+        }
+      });
+    }
+
+    // 3. Comunidad por canal (horizontal bars)
+    const elPk = document.getElementById('chartPeaks');
+    if(elPk){
+      new Chart(elPk.getContext('2d'),{
+        type:'bar',
+        data:{
+          labels:['Facebook','Instagram','TikTok'],
+          datasets:[{
+            label:'Seguidores (K) - cierre abril',
+            data:[453.12, 254.31, 156.38],
+            backgroundColor:['#041E42','#C12A21','#1F8FB8'],
+            borderRadius:6, barThickness:50
+          }]
+        },
+        options:{
+          indexAxis:'y', responsive:true, maintainAspectRatio:false,
+          plugins:{legend:{display:false}, tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.parsed.x+'K seguidores'; }}})},
+          scales:{
+            x:{grid:grid, ticks:{color:'#6E7A91', callback:function(v){ return v+'K'; }}, title:{display:true, text:'Seguidores (K)', color:'#6E7A91'}},
+            y:{grid:{display:false}, ticks:{color:'#2A3F5F', font:{size:13}}}
+          }
+        }
+      });
+    }
+
+    // 4. Tipo de contenido (polarArea)
+    const elTp = document.getElementById('chartType');
+    if(elTp){
+      new Chart(elTp.getContext('2d'),{
+        type:'polarArea',
+        data:{
+          labels:['Lanzamiento','Branding','Storytelling','Propósito social','Reactivo','Educacional'],
+          datasets:[{
+            data:[26, 22, 18, 14, 12, 8],
+            backgroundColor:[
+              'rgba(193,42,33,.78)',
+              'rgba(4,30,66,.78)',
+              'rgba(229,98,26,.7)',
+              'rgba(110,122,145,.65)',
+              'rgba(193,42,117,.6)',
+              'rgba(31,143,184,.55)'
+            ],
+            borderColor:'#FFFFFF', borderWidth:2
+          }]
+        },
+        options:{
+          responsive:true, maintainAspectRatio:false,
+          plugins:{
+            legend:{position:'bottom', labels:{boxWidth:10, boxHeight:10, padding:14, usePointStyle:true, pointStyle:'rectRounded'}},
+            tooltip:Object.assign({},tt,{callbacks:{label:function(c){ return ' '+c.label+' '+c.parsed.r+'%'; }}})
+          },
+          scales:{
+            r:{
+              grid:{color:'rgba(217,222,231,.7)'},
+              angleLines:{color:'rgba(217,222,231,.7)'},
+              ticks:{display:false, backdropColor:'transparent'},
+              pointLabels:{color:'#2A3F5F', font:{size:11}}
+            }
           }
         }
       });
     }
   }
 })();
+
+function toggleFeeDetail(){
+  var detail = document.getElementById('feeDetail');
+  var btn = document.getElementById('feeDetailToggle');
+  if(!detail || !btn) return;
+  var show = detail.querySelector('.lbl-show');
+  var hide = detail.querySelector('.lbl-hide');
+  var btnShow = btn.querySelector('.lbl-show');
+  var btnHide = btn.querySelector('.lbl-hide');
+  if(detail.style.display === 'none'){
+    detail.style.display = 'block';
+    if(btnShow) btnShow.style.display = 'none';
+    if(btnHide) btnHide.style.display = 'inline';
+  } else {
+    detail.style.display = 'none';
+    if(btnShow) btnShow.style.display = 'inline';
+    if(btnHide) btnHide.style.display = 'none';
+  }
+}
+window.toggleFeeDetail = toggleFeeDetail;
+
 </script>
 
 </body>
