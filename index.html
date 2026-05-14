@@ -4364,6 +4364,67 @@
     .ecosistema-grid{grid-template-columns:1fr;}
   }
 
+
+  /* === OBJETIVOS DEL ÁREA · 4 objetivos con KPIs === */
+  .objetivos-area{display:flex;flex-direction:column;gap:18px;}
+  .objetivo-row{
+    display:grid;grid-template-columns:1.05fr 1.4fr;gap:24px;align-items:stretch;
+  }
+  .objetivo-card{
+    background:linear-gradient(135deg,#1E5F86 0%, #1F4F73 100%);color:#fff;
+    border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;
+    box-shadow:0 10px 30px -18px rgba(31,79,115,.4);position:relative;overflow:hidden;
+  }
+  .objetivo-card::after{
+    content:"";position:absolute;top:-30px;right:-30px;width:140px;height:140px;
+    background:radial-gradient(circle,rgba(255,255,255,.08) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .objetivo-num{
+    font-family:var(--font-display);font-weight:600;font-size:14px;
+    color:rgba(255,255,255,.65);letter-spacing:.04em;
+  }
+  .objetivo-card h4{
+    font-family:var(--font-display);font-weight:600;font-size:20px;line-height:1.2;
+    color:#fff;letter-spacing:-.005em;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;
+  }
+  .objetivo-card p{
+    font-size:14px;line-height:1.55;color:rgba(255,255,255,.86);
+  }
+  .objetivo-card em{font-style:italic;color:#fff;}
+  .objetivo-kpis{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  }
+  .objetivo-kpi{
+    background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:22px 20px;display:flex;flex-direction:column;gap:10px;
+    box-shadow:0 4px 16px -10px rgba(4,30,66,.08);
+  }
+  .kpi-name{
+    font-family:var(--font-display);font-weight:600;font-size:14px;line-height:1.25;
+    color:#1E5F86;
+  }
+  .kpi-value{
+    font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.05;
+    color:var(--navy);letter-spacing:-.01em;
+  }
+  .kpi-value small{
+    display:block;font-family:var(--font-body);font-weight:400;font-size:12px;
+    color:var(--text-3);margin-top:6px;letter-spacing:0;
+  }
+
+  /* Only 2 KPIs on objective 4 */
+  .objetivo-row:last-child .objetivo-kpis{grid-template-columns:repeat(2,1fr);}
+
+  @media (max-width:1000px){
+    .objetivo-row{grid-template-columns:1fr;}
+    .objetivo-kpis{grid-template-columns:repeat(2,1fr);}
+    .objetivo-row:last-child .objetivo-kpis{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:600px){
+    .objetivo-kpis, .objetivo-row:last-child .objetivo-kpis{grid-template-columns:1fr;}
+  }
+
 </style>
 </head>
 <body>
@@ -4446,70 +4507,107 @@
 <section class="funnel-section" id="objetivos">
   <div class="container">
     <div class="section-tag">01 · Objetivos digitales del año</div>
-    <h2 class="section-title">Lo que debe <em>impulsar</em> el ecosistema digital en 2026.</h2>
-    <p class="section-lead">Cada frente responde a un momento del embudo y a un objetivo puntual de negocio. La ejecución de la agencia se integra a esta lógica para convertir estrategia, contenido y reacción en resultados medibles.</p>
+    <h2 class="section-title">Objetivos del <em>área</em> en 2026.</h2>
+    <p class="section-lead">Cuatro objetivos de mercadeo digital con sus indicadores. La ejecución de la agencia se integra a esta lógica para convertir estrategia, contenido y reacción en resultados medibles.</p>
 
     <div class="funnel-wrap">
       <div class="funnel-head">
-        <h3>Embudo digital · AKT Motos</h3>
+        <h3>Objetivos del área · Mercadeo Digital AKT</h3>
         <div class="legend">
-          <span><span class="dot" style="background:var(--cyan)"></span> Conciencia</span>
-          <span><span class="dot" style="background:var(--orange)"></span> Consideración</span>
-          <span><span class="dot" style="background:var(--red)"></span> Conversión</span>
+          <span><span class="dot" style="background:var(--navy)"></span> 4 objetivos · KPIs</span>
         </div>
       </div>
 
-      <div class="funnel-stages">
-        <!-- TOFU -->
-        <div class="funnel-stage tofu">
-          <div class="funnel-stage-head">
-            <span class="funnel-stage-tag">TOFU</span>
-            <span class="funnel-stage-pct">Top of funnel</span>
+      <div class="objetivos-area">
+
+        <!-- 01 · Recordación de marca -->
+        <div class="objetivo-row">
+          <div class="objetivo-card objetivo-card-1">
+            <div class="objetivo-num">1</div>
+            <h4>Recordación de marca con contenido diferenciado</h4>
+            <p>Desarrollar una estrategia de contenidos auténtica y consistente que conecte con nuestro público y aumente el reconocimiento de marca.</p>
           </div>
-          <h4>Crecer la audiencia<small>Estar presentes donde se forma la opinión del segmento moto.</small></h4>
-          <div class="objetivo">Aumentar alcance y comunidad activa en redes propias. Hablarle a quien aún no tiene una moto AKT.</div>
-          <div class="funnel-kpis">
-            <div class="funnel-kpi"><span class="k">Alcance promedio por post · IG</span><span class="v">+90%</span></div>
-            <div class="funnel-kpi"><span class="k">Alcance promedio por post · FB</span><span class="v">+71%</span></div>
-            <div class="funnel-kpi"><span class="k">Comunidad TikTok</span><span class="v">+8%</span></div>
-            <div class="funnel-kpi"><span class="k">Comunidad Instagram</span><span class="v">+3%</span></div>
+          <div class="objetivo-kpis">
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Alcance de publicaciones</div>
+              <div class="kpi-value">12.000 <small>personas alcanzadas por contenido</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Engagement de publicaciones</div>
+              <div class="kpi-value">2% <small>de engagement promedio</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Interacción con publicaciones</div>
+              <div class="kpi-value">300 <small>interacciones por contenido</small></div>
+            </div>
           </div>
-          <div class="funnel-contrib"><strong>Aporte conjunto:</strong> rodajes hero, contenido editorial con dirección de arte, distribución en TikTok y reels que llegan fuera del feed propio.</div>
         </div>
 
-        <!-- MOFU -->
-        <div class="funnel-stage mofu">
-          <div class="funnel-stage-head">
-            <span class="funnel-stage-tag">MOFU</span>
-            <span class="funnel-stage-pct">Middle of funnel</span>
+        <!-- 02 · Posicionamiento referente experto -->
+        <div class="objetivo-row">
+          <div class="objetivo-card objetivo-card-2">
+            <div class="objetivo-num">2</div>
+            <h4>Posicionamiento como referente experto en motos</h4>
+            <p>Consolidar la autoridad de la marca mediante contenido técnico, educativo y experiencial que demuestre nuestro conocimiento del sector y genere confianza.</p>
           </div>
-          <h4>Construir consideración<small>Que la audiencia entienda por qué AKT, y no otra marca.</small></h4>
-          <div class="objetivo">Conectar la marca con la categoría: lanzamientos, demos de producto, narrativa de origen, propósito MFME.</div>
-          <div class="funnel-kpis">
-            <div class="funnel-kpi"><span class="k">Interacciones · Instagram</span><span class="v">+94%</span></div>
-            <div class="funnel-kpi"><span class="k">Engagement · Facebook</span><span class="v">+35%</span></div>
-            <div class="funnel-kpi"><span class="k">Impresiones en historias · IG</span><span class="v">+66×</span></div>
-            <div class="funnel-kpi"><span class="k">Engagement Instagram</span><span class="v">+2%</span></div>
+          <div class="objetivo-kpis">
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Alcance de publicaciones</div>
+              <div class="kpi-value">12.000 <small>personas alcanzadas por contenido</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Engagement de publicaciones</div>
+              <div class="kpi-value">2% <small>de engagement promedio</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Interacción con publicaciones</div>
+              <div class="kpi-value">300 <small>interacciones por contenido</small></div>
+            </div>
           </div>
-          <div class="funnel-contrib"><strong>Aporte conjunto:</strong> lanzamientos JET EVO / NKD / XRS como campañas multi-pieza, storytelling MFME mensual, activación de creadores con criterio de match.</div>
         </div>
 
-        <!-- DOFU -->
-        <div class="funnel-stage dofu">
-          <div class="funnel-stage-head">
-            <span class="funnel-stage-tag">DOFU</span>
-            <span class="funnel-stage-pct">Bottom of funnel</span>
+        <!-- 03 · Generación de demanda -->
+        <div class="objetivo-row">
+          <div class="objetivo-card objetivo-card-3">
+            <div class="objetivo-num">3</div>
+            <h4>Generación de demanda y captación de leads</h4>
+            <p>Atraer y calificar clientes potenciales mediante estrategias digitales que soporten los objetivos del área comercial.</p>
           </div>
-          <h4>Empujar la conversión<small>Tráfico de calidad a comerciales, concesionarios y preventa.</small></h4>
-          <div class="objetivo">Que el contenido también venda: preventas, beneficios técnicos, precios, repuestos. Sin perder el tono editorial.</div>
-          <div class="funnel-kpis">
-            <div class="funnel-kpi"><span class="k">Preventa XRS 180</span><span class="v">Mejor post histórico</span></div>
-            <div class="funnel-kpi"><span class="k">Categoría repuestos</span><span class="v">Línea editorial propia</span></div>
-            <div class="funnel-kpi"><span class="k">Posts educacionales</span><span class="v">Pico de engagement</span></div>
-            <div class="funnel-kpi"><span class="k">Reels comerciales</span><span class="v">Adaptados por canal</span></div>
+          <div class="objetivo-kpis">
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Conversaciones a WhatsApp</div>
+              <div class="kpi-value">26.000 <small>conversaciones a WhatsApp</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Leads en sitio web</div>
+              <div class="kpi-value">2.046 <small>leads</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Visitas al sitio web</div>
+              <div class="kpi-value">500.000 <small>visitas al sitio web</small></div>
+            </div>
           </div>
-          <div class="funnel-contrib"><strong>Aporte conjunto:</strong> adaptaciones gráficas de campaña, asset packs por concesionario, contenido técnico-comercial con código local.</div>
         </div>
+
+        <!-- 04 · Construcción de marca con propósito social -->
+        <div class="objetivo-row">
+          <div class="objetivo-card objetivo-card-4">
+            <div class="objetivo-num">4</div>
+            <h4>Construcción de marca con propósito social</h4>
+            <p>Fortalecer el vínculo emocional con la audiencia a través de contenidos de impacto social como <em>ASOBDIM</em> y <em>Mi Familia Me Espera</em>, posicionando la marca más allá de la comunicación comercial.</p>
+          </div>
+          <div class="objetivo-kpis">
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Publicaciones con enfoque social</div>
+              <div class="kpi-value">6 <small>publicaciones al mes</small></div>
+            </div>
+            <div class="objetivo-kpi">
+              <div class="kpi-name">Engagement de publicaciones</div>
+              <div class="kpi-value">2% <small>de engagement promedio</small></div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- NECESIDAD DE AGENCIA DIGITAL · literal del documento de objetivos área (slide 2) -->
